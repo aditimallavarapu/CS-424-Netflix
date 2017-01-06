@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Netflix SunBurst!</title>
+		<style>
+		
+			.legendday {
+				font-size: 12px;
+				}		
+			.legend {
+				font-size: 12px;
+				}
+			rect {
+				cursor: pointer;                          
+				stroke-width: 2;
+				}
+			rect.select1{                             
+				fill: blue;             
+			}                     
+			div.tooltip {
+				position: absolute;
+				text-align: center;
+				padding: 2px;
+				font: 12px sans-serif;
+				background: lightsteelblue;
+				border: 0px;
+				border-radius: 8px;
+			}
+		</style>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+        
+    </head>
+    <body>
+		
+		<div style="font-family:Brown,helvetica,sans-serif;font-size:28px;position:relative;top:40px;left:500px">
+					Netflix Sunburst! 
+		</div>
+		<script type="text/javascript">
+		
+			var margin = {top: 100, right: 100, bottom: 100, left: 100},
+				width = 1650 - margin.left - margin.right,
+				height = 1000 - margin.top - margin.bottom;
+			
+			var max_w = 500;
+			var max_h = 430;
+			
+			var mineTime = new Array();
+            d3.csv("netflix_data3_duration3.txt", function(error,datao) {
+			if (error) {  //If error is not null, something went wrong.
+				console.log(error);  //Log the error.
+			} else {   
+					
+					//push duration for each data point to be converted into scale
+					for (var i = 0; i < datao.length; i++) {
+							mineTime.push(parseInt(datao[i].Duration));
+					}
+					
+					//to control the length of the bars
+					var minDuration = d3.min(mineTime);
+					var maxDuration = d3.max(mineTime);
+					var lengthScale = d3.scaleLinear().domain([minDuration,maxDuration])
+										.range([0,80]);   
+											
+		function calcangle(d)
+			{
+				/*
+					calculate angle for the bar of datapoint
+				*/
+				var timewat = d.Time;
+				var h = timewat.split(":");
+				var second = parseInt(h[1]) * 60 + parseInt(h[2]);
+				var quad = (parseInt(h[0])%6)*(Math.PI/3);
+				var angle = quad +((Math.PI/3) * (second/3600));
+				angle=2*Math.PI- angle;
+				angle=angle+Math.PI/2;			//to have clock like features
+				return angle;
+			}
+			
+		function calcx1(d)
+			{
+				/*
+					calculates endpoints of the bar of the data point
+				*/
+				var anglex;
+				var timewat = d.Time;
+				var angle = calcangle(d);
+				var h = timewat.split(":");	
+				
+				if( parseInt(h[0])>= 12){
+						if(parseInt(h[0]) >= 18){									
+									anglex = (max_w/2) + Math.cos(angle) * (radius);
+									
+									}
+						else{
+							anglex = (max_w/2) + Math.cos(angle) * (radius- 80);
+							
+							}
+					}		
+					else{
+						anglex = (max_w/2) + Math.cos(angle) * (radius - 160);
+						
+					  }
+					  
+					  return anglex;
+			}
+
+			function calcy1(d)
+			{
+				/*
+					calculates endpoints of the bar of the data point
+				*/
+				var angley;
+				var timewat = d.Time;
+				var angle = calcangle(d);
+				var h = timewat.split(":");				
+				if( parseInt(h[0])>=12){
+						if(parseInt(h[0]) >= 18){	
+									angley = (max_h/2) + Math.sin(-angle) * (radius);
+								}
+						else{
+							angley = (max_h/2) + Math.sin(-angle) * (radius- 80);
+							}
+					}		
+					else{
+						angley = (max_h/2) + Math.sin(-angle) * (radius - 160);
+					  }
+					  return angley;
+			}	
+			
+			function calcx2(d)
+			{
+				/*
+					calculates endpoints of the bar of the data point
+				*/
+				var anglex;
+				var timewat = d.Time;
+				var angle = calcangle(d);
+				var h = timewat.split(":");	
+				var duration = lengthScale(d.Duration);
+				if( parseInt(h[0])>=12){
+						if(parseInt(h[0]) >= 18){									
+									anglex = (max_w/2) + Math.cos(angle) * (radius+duration);
+									}
+						else{
+							anglex = (max_w/2) + Math.cos(angle) * (radius- 80+duration);
+							}
+					}		
+					else{
+						anglex = (max_w/2) + Math.cos(angle) * (radius - 160+duration);
+					  }
+					  return anglex;
+			}
+
+			function calcy2(d)
+			{
+				/*
+					calculates endpoints of the bar of the data point
+				*/
+				var angley;
+				var timewat = d.Time;
+				var angle = calcangle(d);
+				var duration = lengthScale(d.Duration);
+				var h = timewat.split(":");				
+				if( parseInt(h[0])>=12){
+						if(parseInt(h[0])>=18){	
+									angley = (max_h/2) + Math.sin(-angle) * (radius+duration);
+								}
+						else{
+							angley = (max_h/2) + Math.sin(-angle) * (radius- 80+duration);
+							}
+					}		
+					else{
+						angley = (max_h/2) + Math.sin(-angle) * (radius - 160+duration);
+					  }
+					  return angley;
+			}		  		
+			
+			function returncolor(d)
+			{
+				
+				var day = d.Day;
+				
+				if(day=="Monday")
+				{
+					
+					return daycolor[0];
+					
+				}
+				else if(day=="Tuesday")
+				{
+					return daycolor[1];
+				}else if(day=="Wednesday")
+				{
+					return daycolor[2];
+				}else if(day=="Thursday")
+				{
+					return daycolor[3];
+				}else if(day=="Friday")
+				{
+					return daycolor[4];
+				}else if(day=="Saturday")
+				{
+					return daycolor[5];
+				}else if(day=="Sunday")
+				{
+					return daycolor[6];
+				}
+				
+			}
+			/*
+				getters for data
+			*/
+			function getTitle(d)
+			{
+				return d.Title;	
+			}
+			function getDevice(d)
+			{
+				return d.Device;
+			}
+			function getGenre(d)
+			{
+				return d.Genre;
+			}
+			function getTime(d)
+			{
+				return d.Time;
+			}
+			
+			function getDay(d)
+			{
+				return d.Day;
+			}
+			
+			function getDate(d)
+			{
+				return d.Date;
+			}
+			
+			function funcmouseover(d)
+			{
+					/*
+						mouse over function to display tooltip
+					*/
+					
+					div.transition()
+						.duration(100)	
+						.style("opacity", .9);
+					div.html(getTime(d) + ", " + getDay(d) +", " + getDate(d) +  " <br> " + getTitle(d)+ " <br>" + getGenre(d)+ ", Watched on:" +getDevice(d))		
+						.style("left", (d3.event.pageX) + "px")             
+						.style("top", (d3.event.pageY - 28) + "px");
+			}
+				
+			function funcmouseout(d)
+			{
+					/*
+						mouseout function to take care of tooltip
+					*/
+				div.transition()		
+					.duration(5000)		
+					.style("opacity", 0);
+			}
+				
+			var canvas = d3.select("body").append("svg")
+				.attr("width",width)
+				.attr("height",height)
+				.attr("position", "relative")
+				
+			canvas.append("g").append("rect")
+					.attr("width",width)
+					.attr("height",height)
+					.style("fill","transparent")
+					.style("stroke","black")
+					.style("stroke-width","1");
+				
+				
+			var group = canvas.append("g")
+						.attr("transform","translate(350,175)");	
+					
+			//for legend
+			var color = ["#ffffcc","#ffff99","#ffff66"];
+			var daycolor = ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300", "#8b0707", "#651067", "#329262", "#5574a6", "#3b3eac"];
+			var colorValue = ["Morning 6am - 11.59 pm", "Afternoon 12 pm - 6pm" , "Evening 6pm -12pm"];
+			var colorScale = d3.scaleOrdinal().range(color).domain(colorValue);
+			var legendRectSize = 18;                                 
+			var legendSpacing = 4;                                   
+			var legend = group.selectAll(".legend")                   
+						.data(colorValue)                             
+						.enter()                                      
+						.append("g")                                  
+						.attr("class", "legend")                      
+						.attr("transform", function(d, i) {           
+								var height_l = legendRectSize + legendSpacing;          
+								var offset =  height_l * colorScale.domain().length/2 ;     
+								var horz = -2 * legendRectSize -100;                       
+								var vert = i * height_l - offset - 100;                    
+								return "translate(" + horz + "," + vert  + ")";        
+							});                                                     
+
+			legend.append("rect")                                     
+				.attr("width", legendRectSize)                        
+				.attr("height", legendRectSize)                       
+				.style("fill", colorScale)                            
+				.style("stroke", colorScale)
+				.style("stroke-width","1");      
+				
+			legend.append("text")                                     
+					.attr("x", legendRectSize + legendSpacing)        
+					.attr("y", legendRectSize - legendSpacing)        
+					.text(function(d) { return d; }); 
+			
+			var radius = Math.min(max_w,max_h)/2;
+								
+			//main circles		
+			var circlelarge = group.append("circle")
+								.attr("r", radius)
+								.attr("cx", max_w/2)
+								.attr("cy",max_h/2)
+								.style("fill", "#ffff66");
+								
+			var circlemedium = group.append("circle")
+								.attr("r", radius-80)
+								.attr("cx", max_w/2)
+								.attr("cy",max_h/2)
+								.style("fill", "#ffff99");
+			
+			var circlesmall = group.append("circle")
+								.attr("r", radius-160)
+								.attr("cx", max_w/2)
+								.attr("cy",max_h/2)
+								.style("fill", "#ffffcc");
+			//draw time axes
+			var axesang = [(2*Math.PI)+(Math.PI/2),(Math.PI/3)+(Math.PI/2),(2*Math.PI/3)+(Math.PI/2),(Math.PI)+(Math.PI/2),(4*Math.PI/3)+(Math.PI/2),(5*Math.PI/3)+(Math.PI/2)]; 
+			var axeslen= 100;
+			var axes = group.append("g");
+			axes.selectAll("line")
+							.data(axesang)
+							.enter().append("line")
+								.attr("x1",function(d){return (max_w/2 + Math.cos(d) * (radius-160));})
+								.attr("y1",function(d){return (max_h/2 + Math.sin(-d) * (radius-160));})
+								.attr("x2",function(d){return (max_w/2 + Math.cos(d) * (radius + axeslen));})
+								.attr("y2",function(d){return (max_h/2 + Math.sin(-d) *(radius + axeslen));})
+								.attr("stroke","black")
+								.attr("stroke-width","0.5")
+								.attr("opacity","100");	
+			/*
+				display time on axes
+			*/
+			axes.selectAll("g")
+				.data(axesang)
+				.enter()
+				.append("text")
+					.attr("x",function(d){return (max_w/2 + Math.cos(d) * (radius-158));})
+					.attr("y",function(d){return (max_h/2 + Math.sin(-d) * (radius-158));})
+					.text(function(d,i){ 
+							if(i==0)
+								return 6+i;
+							else 
+								return 6+(6-i);});
+					
+			axes.selectAll("g")
+				.data(axesang)
+				.enter()
+				.append("text")
+					.attr("x",function(d){return (max_w/2 + Math.cos(d) * (radius-75));})
+					.attr("y",function(d){return (max_h/2 + Math.sin(-d) * (radius-75));})
+					.text(function(d,i){ if(i==0)
+								return 12+i;
+							else 
+								return 12+(6-i);});
+
+			axes.selectAll("g")
+				.data(axesang)
+				.enter()
+				.append("text")
+					.attr("x",function(d){return (max_w/2 + Math.cos(d) * (radius+5));})
+					.attr("y",function(d){return (max_h/2 + Math.sin(-d) * (radius+5));})
+					.text(function(d,i){ if(i==0)
+								return 18+i;
+							else 
+								return 18+(6-i);});				
+							
+			var scratchpad = group.append("g");
+			
+			var div = d3.select("body").append("div")
+					.attr("class", "tooltip")
+					.style("opacity", 0);					
+			//datapoint bar
+			
+			var line = scratchpad.selectAll("line")
+						.data(datao)
+						.enter() 
+						.append("line")
+							.attr("x1",calcx1)
+							.attr("y1",calcy1)
+							.attr("x2",calcx2)
+							.attr("y2",calcy2)
+							.style("stroke",returncolor)
+							.attr("stroke-width", "5")
+							.on("mouseover",funcmouseover) 
+							.on("mouseout", funcmouseout);
+			
+			//for query selection panel
+			
+			var dayValue = ["Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+			var days = new Array();
+			dayValue.forEach(function(d,i){
+					days.push({enabled:true, value: dayValue[i]});
+						});
+			var dayScale = d3.scaleOrdinal().domain(dayValue).range(dayValue);
+			var legendRectSize = 18;                                 
+			var legendSpacing = 4;                                   
+			var queryDay = group.selectAll(".legendday")                   
+						.data(dayValue)                             
+						.enter()                                      
+						.append("g")                                  
+						.attr("class", "legendday")                      
+						.attr("transform", function(d, i) {           
+								var height_l = legendRectSize + legendSpacing;          
+								var offset =  height_l * dayScale.domain().length/2 ;     
+								var horz = -2 * legendRectSize + 600;                       
+								var vert = i * height_l - offset - 82;                    
+								return "translate(" + horz + "," + vert  + ")";        
+							});                                                     
+
+			queryDay.append("rect")                                     
+				.attr("width", legendRectSize)                        
+				.attr("height", legendRectSize)                       
+				.style("fill",function(label){
+						var pos = days.map(function(d) { return d.value; }).indexOf(label);
+						return daycolor[pos];} )                            
+				.style("stroke",function(label){
+						var pos = days.map(function(d) { return d.value; }).indexOf(label);
+						return daycolor[pos];} )  
+				.on("click", function(label) { 
+						
+						var rect = d3.select(this);
+						var enabled = true;
+						var pos = days.map(function(d) { return d.value; }).indexOf(label);
+						
+						
+						var totalEnabled = d3.sum(days.map(function(d) {
+							return (d.enabled) ? 1 : 0;
+							
+						}))
+						if(days[pos].enabled ===false){
+							days[pos].enabled = true;
+							rect.style("fill",daycolor[pos]);			//check colors
+						}
+						else{
+							if (totalEnabled < 2) return;
+							days[pos].enabled = false;
+							rect.style("fill","transparent");			//check colors
+						}						
+						
+				var selectDays = [];
+				days.forEach(function(d,i){
+							var cb = label;
+							if(d.enabled ==true){
+								selectDays.push(d.value);
+								
+							}
+					});
+      
+				if(selectDays.length > 0){
+						newData = datao.filter(function(d,i){
+									return selectDays.includes(d.Day);}
+								);
+						}
+				else {
+						newData = datao;     
+				} 
+        
+					line = scratchpad.selectAll("line")
+								.data(newData,function(d){return d;});
+					line.enter()
+							.append("line")
+							.attr("x1",calcx1)
+							.attr("y1",calcy1)
+							.attr("x2",calcx2)
+							.attr("y2",calcy2)
+							.style("stroke",returncolor)
+							.attr("stroke-width", "5")
+							.on("mouseover",funcmouseover) 
+							.on("mouseout", funcmouseout);
+						
+                  line.exit()
+							.remove();      	
+			});	//onclick ends here
+			queryDay.append("text")                                     
+					.attr("x", legendRectSize + legendSpacing)        
+					.attr("y", legendRectSize - legendSpacing)        
+					.text(function(d) { return d; }); 	
+				
+			
+			}}// if error while reading file
+			)
+			
+			
+				
+        </script>
+    </body>
+</html

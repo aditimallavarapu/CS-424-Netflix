@@ -1,0 +1,101 @@
+Day,Date,Year,Title,Genre,Device,Time,Duration
+Monday, August 28, 2016,Psych:Season 2:Gus' Dad May Have Killed an Old Guy,TV Series,Android,10:08:59,43
+Saturday, August 27, 2016,Psych: Season 2:Bounty Hunters!,TV Series,Android,14:59:17,43
+Sunday, August 21, 2016,Psych: Season 2:Meat Is Murder But Murder Is Also Murder,TV Series,Android,6:49:14,43
+Saturday, August 20, 2016,Psych: Season 2:And Down to the Stretch Comes Murder,TV Series,Android,8:15:29,42
+Saturday, August 20, 2016,Psych: Season 2:Zero to Murder in 60 Seconds,TV Series,Android,7:49:08,43
+Saturday, August 20, 2016,Psych: Season 2:Psy vs. Psy,TV Series,Android,8:25:38,43
+Wednesday, August 17, 2016,Psych: Season 1:Scary Sherry Bianca's Toast,TV Series,Android,22:41:35,43
+Wednesday, August 17, 2016,What Women Want,Movie,Android,20:01:24,126
+Wednesday, August 17, 2016,Eternal Sunshine of the Spotless Mind,Movie,Android,9:08:19,107
+Tuesday, August 16, 2016,Psych: Season 1:Game Set...Muuurder?,TV Series,Android,10:34:15,43
+Thursday, August 11, 2016,Amu,Movie,Android,18:10:30,102
+Wednesday, August 10, 2016,Psych: Season 1:Forget Me Not,TV Series,Android,8:20:24,42
+Wednesday, August 10, 2016,Psych: Season 1:Shawn Vs. the Red Phantom,TV Series,Android,6:37:01,43
+Tuesday, August 9, 2016,The Little Prince,Movie,Android,19:16:35,106
+Sunday, August 7, 2016,Agatha Christie's Poirot:Series 1:The Adventure of Johnnie Waverly,TV Series,Android,8:43:52,52
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:I Wear the Face,TV Series,Android,18:25:25,42
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:Unbreak My Heart,TV Series,Android,13:50:33,43
+Sunday, July 31, 2016,Grey's Anatomy:Season 12:Sledgehammer,TV Series,Android,19:50:15,43
+Saturday, June 11, 2016,Psych: Season 1:Weekend Warriors,TV Series,Android,13:58:29,43
+Friday, June 10, 2016,Psych: Season 1:Woman Seeking Dead Husband Smokers Okay No Pets,TV Series,Android,6:39:08,42
+Wednesday, June 8, 2016,Psych: Season 1:Speak Now or Forever Hold Your Piece,TV Series,Android,19:50:33,42
+Thursday, June 2, 2016,Psych: Season 1:Pilot,TV Series,Android,7:49:46,78,78
+Tuesday, May 31, 2016,The Office (U.S.): Season 1:Diversity Day,TV Series,Android,20:25:25,21
+Tuesday, May 31, 2016,The Office (U.S.): Season 1:Pilot,TV Series,Android,13:20:56,23
+Saturday, May 28, 2016,Scrubs: Season 9: Our Thanks,TV Series,Android,8:50:08,21
+Thursday, May 26, 2016,Scrubs: Season 9: Our Driving Issues,TV Series,Android,10:50:15,21
+Thursday, May 26, 2016,Scrubs: Season 9: Our Dear Leaders,TV Series,Android,23:00:29,21
+Wednesday, May 25, 2016,Scrubs: Season 9: Our True Lies,TV Series,Android,8:49:46,21
+Monday, May 23, 2016,Scrubs: Season 9: Our Couples,TV Series,Android,16:20:33,21
+Sunday, May 22, 2016,Scrubs: Season 9: Our White Coats,TV Series,Android,8:25:25,21
+Sunday, May 22, 2016,Scrubs: Season 9: Our New Girl-Bro,TV Series,Android,8:33:56,21
+Friday, May 20, 2016,Scrubs: Season 9: Our Mysteries,TV Series,Android,11:50:15,21
+Friday, May 20, 2016,Scrubs: Season 9: Our Histories,TV Series,Android,22:58:29,21
+Friday, May 20, 2016,Scrubs: Season 9: Our Role Models,TV Series,Android,11:49:46,21
+Tuesday, May 17, 2016,Scrubs: Season 9: Our Drunk Friend,TV Series,Android,11:40:08,21
+Monday, May 16, 2016,Scrubs: Season 9: Our First Day of School,TV Series,Android,16:50:33,21
+Saturday, May 14, 2016,Scrubs: Season 8: My Finale Part 2,TV Series,Android,16:33:56,21
+Saturday, May 14, 2016,Scrubs: Season 8: My Finale Part 1,TV Series,Android,6:50:15,21
+Saturday, May 14, 2016,Scrubs: Season 8: My Chief Concern,TV Series,Android,9:58:29,21
+Saturday, May 14, 2016,Scrubs: Season 8: My Cuz,TV Series,Android,12:49:46,21
+Friday, May 13, 2016,Scrubs: Season 8: My Soul on Fire Part 2,TV Series,Android,12:07:08,21
+Friday, May 13, 2016,Scrubs: Season 8: My Soul on Fire Part 1,TV Series,Android,9:00:33,22
+Friday, May 13, 2016,Scrubs: Season 8: My Full Moon,TV Series,Android,17:20:25,21
+Friday, May 13, 2016,Scrubs: Season 8: Their Story II,TV Series,Android,16:50:56,21
+Friday, May 13, 2016,Scrubs: Season 8: My Nah Nah Nah,TV Series,Android,7:50:15,21
+Friday, May 13, 2016,Scrubs: Season 8: My Comedy Show,TV Series,Android,10:58:29,21
+Thursday, May 12, 2016,Scrubs: Season 8: My Absence,TV Series,Android,9:49:46,21
+Wednesday, May 11, 2016,Scrubs: Season 8: My Lawyer's in Love,TV Series,Android,19:08:08,21
+Friday, August 26, 2016,Psych: Season 2:Rob-A-Bye Baby,TV Series,Computer ,9:59:54,43
+Wednesday, August 24, 2016,Psych: Season 2:If You're So Smart Then Why Are You Dead,TV Series,Computer ,12:11:56,42
+Wednesday, August 17, 2016,Psych: Season 2:American Duos,TV Series,Computer ,13:27:41,43
+Wednesday, August 10, 2016,Psych: Season 1:From the Earth to the Starbucks,TV Series,Computer ,20:30:18,43
+Monday, August 8, 2016,Agatha Christie's Poirot:Series 1:Triangle at Rhodes,TV Series,Computer ,13:17:57,53
+Wednesday, August 3, 2016,Grey's Anatomy:Season 12:You're Gonna Need Someone on Your Side,TV Series,Computer ,14:16:00,43
+Wednesday, August 3, 2016,Grey's Anatomy:Season 12:It's Alright Ma (I'm Only Bleeding),TV Series,Computer ,10:22:10,43
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:There's a Fine Fine Line,TV Series,Computer ,15:50:33,41
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:When It Hurts So Bad,TV Series,Computer ,13:33:56,43
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:I Am Not Waiting Anymore,TV Series,Computer ,8:50:15,43
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:Odd Man Out,TV Series,Computer ,12:58:29,41
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:All Eyez on Me,TV Series,Computer ,23:10:46,42
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:My Next Life,TV Series,Computer ,12:39:08,43
+Saturday, June 11, 2016,Psych: Season 1:9 Lives,TV Series,Computer ,18:37:46,43
+Saturday, June 4, 2016,Philomena,Movie,Computer ,20:33:56,98
+Saturday, June 4, 2016,The Kite Runner,Movie,Computer ,21:50:15,127
+Friday, June 3, 2016,The Road to El Dorado,Movie,Computer ,20:58:29,89
+Thursday, June 2, 2016,Johnny English Reborn,Movie,Computer ,14:39:08,101
+Wednesday, June 1, 2016,Into the Wild,Movie,Computer ,23:20:33,148
+Monday, May 30, 2016,The Shawshank Redemption,Movie,Computer ,17:50:15,142
+Saturday, May 28, 2016,Amal,Movie,Computer ,23:58:29,103
+Saturday, May 28, 2016,Man Up,Movie,Computer ,18:49:46,88
+Saturday, May 28, 2016,About a Boy,Movie,Computer ,20:50:33,102
+Saturday, May 28, 2016,Bridget Jones's Diary,Movie,Computer ,11:35:25,98
+Thursday, May 26, 2016,Entertainment,Movie,Computer ,19:33:56,102
+Sunday, May 15, 2016,Barfi!,Movie,Computer ,21:25:25,120
+Sunday, August 28, 2016,Psych: Season 2:There's Something About Mira,TV Series,Streaming Stick,10:09:16,42
+Wednesday, August 17, 2016,Psych: Season 2:Sixty Five Million Years Off,TV Series,Streaming Stick,20:06:02,43
+Wednesday, August 17, 2016,Psych: Season 1:Poker? I Barely Know Her,TV Series,Streaming Stick,20:03:28,43
+Thursday, August 11, 2016,Psych: Season 1:Cloudy...with a Chance of Murder,TV Series,Streaming Stick,12:44:27,43
+Thursday, August 11, 2016,Psych: Season 1:He Loves Me He Loves Me Not He Loves Me Oops He's Dead!,TV Series,Streaming Stick,15:10:23,43
+Wednesday, August 10, 2016,Psych: Season 1:Who Ya Gonna Call?,TV Series,Streaming Stick,19:28:56,43
+Tuesday, August 9, 2016,Tallulah,Movie,Streaming Stick,9:04:45,111
+Monday, August 8, 2016,Agatha Christie's Poirot:Series 1:Problem at Sea,TV Series,Streaming Stick,18:27:31,53
+Monday, August 8, 2016,Agatha Christie's Poirot:Series 1:The Third Floor Flat,TV Series,Streaming Stick,9:52:50,51
+Sunday, August 7, 2016,The True Cost,Documentary,Streaming Stick,16:41:32,82
+Saturday, August 6, 2016,Agatha Christie's Poirot:Series 1:Murder in the Mews,TV Series,Streaming Stick,11:46:17,53
+Thursday, August 4, 2016,The Wedding Planner,Movie,Streaming Stick,19:24:16,103
+Tuesday, August 2, 2016,Grey's Anatomy:Season 12:All I Want Is You,TV Series,Streaming Stick,10:45:25,43
+Monday, August 1, 2016,Grey's Anatomy:Season 12:The Sound of Silence,TV Series,Streaming Stick,17:33:56,43
+Monday, August 1, 2016,Grey's Anatomy:Season 12:Things We Lost in the Fire,TV Series,Streaming Stick,15:50:15,43
+Monday, August 1, 2016,Grey's Anatomy:Season 12:Something Against You,TV Series,Streaming Stick,21:58:29,43
+Monday, August 1, 2016,Grey's Anatomy:Season 12:The Me Nobody Knows,TV Series,Streaming Stick,15:49:46,43
+Monday, August 1, 2016,Grey's Anatomy:Season 12:Guess Who's Coming to Dinner,TV Series,Streaming Stick,11:39:08,43
+Monday, August 1, 2016,Grey's Anatomy:Season 12:Old Time Rock and Roll,TV Series,Streaming Stick,7:50:33,43
+Monday, August 1, 2016,Grey's Anatomy:Season 12:Walking Tall,TV Series,Streaming Stick,12:33:56,42
+Monday, August 22, 2016,The Search For Life The Drake Equation,Documentary,Android Phone,7:17:23,59
+Monday, August 8, 2016,A Decent Arrangement,Movie,Android Phone,9:04:37,97
+Monday, August 8, 2016,Agatha Christie's Poirot:Series 1:Four and Twenty Blackbirds,TV Series,Android Phone,9:52:33,53
+Monday, August 1, 2016,Grey's Anatomy:Season 12:I Choose You,TV Series,Streaming Stick,16:20:25,43
+Monday, May 23, 2016,Scrubs: Season 9: Our Stuff Gets Real,TV Series,Android,9:39:08,21
+Monday, June 6, 2016,Psych: Season 1:The Spellingg Bee,TV Series,Android Phone,10:50:25,43
